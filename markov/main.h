@@ -21,4 +21,13 @@ double varCond(const DoubleVec2D &dep, int dx, int dy);
  */
 double computeMean(const DoubleVec2D &dep);
 
+DoubleVec2D calculateSquare(const DoubleVec2D& matrix);
+
+/**
+ * @brief Applies the floor function to each element of the matrix.
+ * @param matrix The input matrix to be processed.
+ * @return The resulting matrix with floor applied to each element.
+ */
+DoubleVec2D floorMatrix(const DoubleVec2D& matrix);
+
 #endif
