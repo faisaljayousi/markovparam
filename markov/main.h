@@ -21,6 +21,11 @@ double varCond(const DoubleVec2D &dep, int dx, int dy);
  */
 double computeMean(const DoubleVec2D &dep);
 
+/**
+* @brief Calculate the square of each element in a matrix.
+* @param matrix The input matrix.
+* @return A new matrix with the squared values.
+*/
 DoubleVec2D calculateSquare(const DoubleVec2D& matrix);
 
 /**
