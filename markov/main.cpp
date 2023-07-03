@@ -63,7 +63,7 @@ double varCond(const DoubleVec2D &dep, int dx, int dy)
     {
         if (numOccurrences[x] != 0)
         {
-            tempe += variance[x] - (mean[x] * mean[x]) / numOccurrences[x];
+            tempe += std::max(variance[x] - (mean[x] * mean[x]) / numOccurrences[x], 0.0);
             totalOccurrences += numOccurrences[x];
         }
     }
