@@ -2,17 +2,20 @@
 Test script to test the varCond function.
 """
 
-import numpy as np
+
+import sys
+import cv2
 from markov.main import varCond
 
 
 if __name__ == '__main__':
 
-    dep = np.array([[5, 3, 8, 7],
-                    [2, 4, 6, 2],
-                    [1, 7, 9, 1],
-                    [5, 4, 4, 8]
-                    ])
+    if len(sys.argv) < 4:
+        print("HOW TO RUN: python3 test.py image_file dx dy")
+        sys.exit(1)
 
-    result = varCond(dep, dx=1, dy=0)
+    image = cv2.imread(sys.argv[1], cv2.IMREAD_GRAYSCALE)
+    dx, dy = sys.argv[2], sys.argv[3]
+
+    result = varCond(image, dx, dy)
     print(f"Parameter value: {result}")
