@@ -7,8 +7,8 @@ import numpy as np
 
 extensions = [
     Extension(
-        "stoseg",
-        ["markov/main.cpp", "markov/wrapper.cpp"],  # source files
+        name="stoseg",
+        sources=["markov/main.cpp", "markov/wrapper.cpp"],
         language="c++",
         extra_compile_args=["-std=c++11"],
         include_dirs=[np.get_include()]
@@ -16,5 +16,16 @@ extensions = [
 ]
 
 setup(
+    author=u"Faisal Jayousi",
+    author_email="fjayousi90@gmail.com",
     ext_modules=cythonize(extensions),
+    platforms=["linux", "windows"],
+    license="MIT",
+    python_requires=">=3.6",
+    classifiers=[
+        "Programming Language :: Python",
+        "Programming Language :: C++",
+        "Programming Language :: C",
+        "Programming Language :: Cython",
+    ]
 )
